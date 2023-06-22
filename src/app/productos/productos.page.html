@@ -1,0 +1,54 @@
+<ion-header [translucent]="true" class="header">
+  <ion-toolbar color="primary" class="toolbar">
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon name="person"></ion-icon>
+      </ion-button>
+      <ion-button>
+        <ion-icon name="cart"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="search()" placeholder="Hola, ¿Qué estás buscando?" class="searchbar"></ion-searchbar>
+    <img src="https://mateogutierrez.neocities.org/Logo-removebg-preview.png" alt="Imagen de encabezado" class="logo">
+    <div class="buttons-container">
+      <ion-button (click)="goToHome()" class="custom-button">Inicio</ion-button>
+      <ion-button (click)="toggleCategoriesMenu()" class="custom-button">
+        Categorías
+        <ion-icon [name]="categoriesMenuOpen ? 'chevron-up' : 'chevron-down'" class="custom-icon"></ion-icon>
+      </ion-button>
+      <ion-button (click)="showOffers()" class="custom-button">Ofertas</ion-button>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="ion-page" id="main-content">
+    <ion-content class="ion-padding">
+      <ion-menu-toggle auto-hide="false">
+        <ion-button slot="start" (click)="toggleCategoriesMenu()" class="categories-button">
+          Categorías
+          <ion-icon [name]="categoriesMenuOpen ? 'chevron-up' : 'chevron-down'" class="categories-icon"></ion-icon>
+        </ion-button>
+      </ion-menu-toggle>
+    </ion-content>
+  </div>
+
+  <ion-menu class="menu" side="start" menuId="categoriesMenu" contentId="main-content">
+    <ion-content>
+      <ion-toolbar>
+        <ion-title class="categories-title">Categorías</ion-title>
+      </ion-toolbar>
+    </ion-content>
+
+    <ion-content>
+      <ion-list>
+        <ion-item *ngFor="let category of categories" (click)="selectCategory(category)" class="category-item">
+          {{ category }}
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+</ion-content>
