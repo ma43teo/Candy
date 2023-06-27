@@ -19,10 +19,9 @@ export class LoginAdminPage {
   iniciarSesion() {
     // Verificar las credenciales de administrador
     if (this.email === 'solucionesgap1@gmail.com' && this.contrasena === 'DulceriaEstrella') {
-      // Credenciales válidas, redirigir a la página de administración
-      this.router.navigate(['/productos']);
+      // redirigir a la página de administrador
+      this.router.navigate(['/home-admin']);
     } else {
-      // Credenciales inválidas, mostrar mensaje de error o hacer alguna otra acción
       console.log('Credenciales inválidas');
     }
   }

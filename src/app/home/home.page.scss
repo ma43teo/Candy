@@ -1,27 +1,66 @@
-#container {
-  text-align: center;
+.Logo{
+  width: 150px;
 
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
+  }
+  
+  .header1{
+  background-color: #FF82FA;
+  }
+  
+  .contenedor{
+    background-color: antiquewhite;
+  }
+  
+  .BotonesH{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 0px;
+    margin: 0%;
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
+  }
+  .separacion {
+    margin-right: 150px; 
+  }
 
-  color: #8c8c8c;
+  .mini-icon{
+    color: #ff002b;
+  }
+  .custom-searchbar {
+    
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    width: 500px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 5px;
+    box-shadow: 0px 0px 5px #ff00ff;
+   
 
-  margin: 0;
-}
-
-#container a {
-  text-decoration: none;
+  }
+  
+  .search-input {
+    flex-grow: 1;
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    font-size: 16px;
+    color: #999999;
+  }
+  
+  .search-icon {
+    background-color: #ff00ff;
+    
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    margin-left: 5px;
+    cursor: pointer;
+  }
+  
+  .search-icon ion-icon {
+    color: #ffffff;
 }

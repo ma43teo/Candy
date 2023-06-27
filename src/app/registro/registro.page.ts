@@ -50,7 +50,7 @@ export class RegistroPage implements OnInit {
   }
 
   enviarCodigoVerificacion() {
-    const phoneNumber = '+52' + this.telefono; // Asegúrate de incluir el código de país correspondiente
+    const phoneNumber = '+52' + this.telefono; // código de país correspondiente
     if (this.recaptchaVerifier) {
       firebase
         .auth()
@@ -100,7 +100,7 @@ export class RegistroPage implements OnInit {
             })
             .then(() => {
               console.log('Usuario registrado y datos guardados exitosamente');
-              this.router.navigate(['productos']);
+              this.router.navigate(['/home']);
             })
             .catch((error: any) => {
               console.error('Error al actualizar el número de teléfono:', error);

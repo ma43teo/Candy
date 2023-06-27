@@ -1,6 +1,6 @@
 <ion-header class="header1">
   
-  <ion-toolbar class="header1" color="primary">
+  <ion-toolbar class="header1" color="pink">
     
   </ion-toolbar>
   
@@ -9,13 +9,12 @@
 
     <ion-buttons slot="end">
       <div class="custom-searchbar">
-        <input type="text" placeholder="Buscar" class="search-input">
+        <input type="text" placeholder="Hola, ¿Que estas buscando?" class="search-input">
         <button class="search-icon">
           <ion-icon name="search"></ion-icon>
         </button>
       </div>
       
-       
       <ion-button routerLink="/perfil">  
         <ion-icon name="person"></ion-icon>
       </ion-button>
@@ -23,6 +22,7 @@
       <ion-button routerLink="/carrito">
         <ion-icon name="cart"></ion-icon>
       </ion-button>  
+
     </ion-buttons>
   </ion-toolbar>
 
@@ -31,10 +31,8 @@
       <h2 class="separacion" style="cursor: pointer;" >Inicio</h2>
       <h2 class="separacion" style="cursor: pointer;">
         <ion-select [(ngModel)]="categoriaSeleccionada">
-                    <ion-select-option value="categorias">Categorias</ion-select-option>
-
+          <ion-select-option value="categorias">Categorias</ion-select-option>
           <ion-select-option value="gomitas">Gomitas</ion-select-option>
-
           <ion-select-option value="chocolates">Chocolates</ion-select-option>
           <ion-select-option value="paletas">Paletas</ion-select-option>
         </ion-select>
@@ -42,4 +40,11 @@
       <h2 class="separacion" style="cursor: pointer;">Ofertas</h2>
     </div>
   </ion-toolbar>
+  
 </ion-header>
+
+<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button name="add" (click)="openModal()">
+    <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+</ion-fab>

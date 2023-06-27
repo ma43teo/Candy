@@ -26,7 +26,7 @@ export class LoginPage {
         // El inicio de sesión con correo electrónico y contraseña fue exitoso
         const user = userCredential.user;
         // Aquí puedes redirigir al usuario a la página deseada
-        this.router.navigate(['/productos']);
+        this.router.navigate(['/home']);
       })
       .catch((error: any) => {
         // Ocurrió un error durante el inicio de sesión
