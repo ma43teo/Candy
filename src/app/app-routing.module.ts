@@ -39,6 +39,18 @@ const routes: Routes = [
     path: 'nuevo-producto-modal',
     loadChildren: () => import('./nuevo-producto-modal/nuevo-producto-modal.module').then( m => m.NuevoProductoModalPageModule)
   },
+  {
+    path: 'perfil',
+    loadChildren: () => import('./perfil/perfil.module').then( m => m.PerfilPageModule)
+  },
+  {
+    path: 'editar-precio-modal',
+    loadChildren: () => import('./editar-precio-modal/editar-precio-modal.module').then( m => m.EditarPrecioModalPageModule)
+  },
+  {
+    path: 'detalle-producto-modal',
+    loadChildren: () => import('./detalle-producto-modal/detalle-producto-modal.module').then( m => m.DetalleProductoModalPageModule)
+  },
 ];
 
 @NgModule({

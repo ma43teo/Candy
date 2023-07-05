@@ -12,7 +12,7 @@
 <ion-content>
   <ion-item>
     <ion-label>Imagen</ion-label>
-    <ion-input type="text" [(ngModel)]="imagen"></ion-input>
+    <input type="file" (change)="onFileChange($event)">
   </ion-item>
 
   <ion-item>
@@ -23,6 +23,11 @@
   <ion-item>
     <ion-label>Precio</ion-label>
     <ion-input type="number" [(ngModel)]="precio"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Precio Mayoreo</ion-label>
+    <ion-input type="number" [(ngModel)]="precioPorMayor"></ion-input>
   </ion-item>
 
   <ion-item>
@@ -38,6 +43,10 @@
       <ion-select-option value="paletas">Paletas</ion-select-option>
     </ion-select>
   </ion-item>
+ <ion-item>
+  <ion-label>Productos existentes</ion-label>
+    <ion-input type="number" [(ngModel)]="cantidad"></ion-input>
+ </ion-item> 
 
   <ion-button expand="full" (click)="guardarProducto()">Guardar</ion-button>
 </ion-content>

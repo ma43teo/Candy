@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+
+
 
 @Component({
   selector: 'app-login-admin',
@@ -10,7 +13,7 @@ export class LoginAdminPage {
   email: string = '';
   contrasena: string = '';
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,private afAuth: AngularFireAuth) { }
 
   irALogin() {
     this.router.navigate(['/login']);
@@ -19,8 +22,19 @@ export class LoginAdminPage {
   iniciarSesion() {
     // Verificar las credenciales de administrador
     if (this.email === 'solucionesgap1@gmail.com' && this.contrasena === 'DulceriaEstrella') {
-      // redirigir a la página de administrador
-      this.router.navigate(['/home-admin']);
+      // Autenticar al administrador con Firebase Authentication
+      this.afAuth.signInWithEmailAndPassword(this.email, this.contrasena)
+        .then(() => {
+          // Autenticación exitosa
+          console.log('Administrador autenticado correctamente');
+  
+          // Redirigir a la página de administrador
+          this.router.navigate(['/home-admin']);
+        })
+        .catch((error) => {
+          // Error de autenticación
+          console.error('Error al autenticar al administrador', error);
+        });
     } else {
       console.log('Credenciales inválidas');
     }

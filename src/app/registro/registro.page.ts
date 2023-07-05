@@ -113,4 +113,5 @@ export class RegistroPage implements OnInit {
         console.error('Error al registrar usuario y guardar los datos:', error);
       });
   }
+  
 }
